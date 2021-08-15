@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+</head>
+
+<body>
+    <header>
+        <h1>Confirm Your Identity</h1>
+    </header>
+    <main>
+        <section>
+            <form>
+                <div>
+                    <label for="emailField">Email:</label>
+                    <input type="email" id="emailField" placeholder="type you email here">
+                </div>
+                <div>
+                    <label for="passwordField">Password:</label>
+                    <input type="password" id="passwordField" placeholder="type you password here">
+                </div>
+                <div>
+                    <input type="button" value="Submit" id="submitButton">
+                </div>
+            </form>
+        </section>
+    </main>
+
+    <script>
+        const inputMail = document.getElementById('emailField');
+        const inputPassword = document.getElementById('passwordField');
+        const submitBtn = document.getElementById('submitButton');
+
+        submitBtn.addEventListener('click', function () {
+            if (inputMail.value == '' || inputPassword.value == '') {
+                console.log('Fill up both fields..');
+            }
+            else {
+                if (inputMail.value == 'tamim@srt.com' && inputPassword.value == 'tamim') {
+                    window.location.href = 'bank.html';
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>
