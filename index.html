@@ -45,6 +45,11 @@
             background: darkred;
             color: cornsilk;
             padding: 15px;
+            cursor: pointer;
+        }
+
+        input[type=button]:disabled {
+            opacity: 0.6;
         }
     </style>
 </head>
@@ -65,7 +70,7 @@
                     <input type="password" id="passwordField" placeholder="type you password here">
                 </div>
                 <div>
-                    <input type="button" value="Submit" id="submitButton">
+                    <input type="button" value="Submit" id="submitButton" disabled>
                 </div>
             </form>
         </section>
