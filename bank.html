@@ -6,11 +6,113 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bank</title>
+
+    <style>
+        * {
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            height: 100vh;
+            font-family: sans-serif;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        section {
+            display: grid;
+            text-align: center;
+            padding: 30px;
+            width: 100%;
+        }
+
+        #overview-section {
+            grid-template-columns: repeat(3, 1fr);
+            grid-gap: 20px;
+            font-size: 30px;
+        }
+
+        @media screen and (max-width:850px) {
+            #overview-section {
+                grid-template-columns: 100%;
+            }
+        }
+
+        #overview-section>div {
+            padding: 40px 60px;
+            margin: 0;
+            color: white;
+            border-radius: 10px;
+            letter-spacing: 1px;
+        }
+
+        h4 {
+            margin: 10px 0;
+        }
+
+        #deposite {
+            background: crimson;
+        }
+
+        #withdraw {
+            background: chocolate;
+        }
+
+        #balance {
+            background: dodgerblue;
+        }
+
+        #getInput-section {
+            grid-template-columns: repeat(2, 1fr);
+            grid-gap: 20px;
+            font-size: 25px;
+            padding: 10px 50px;
+        }
+
+        #getInput-section>div {
+            padding: 30px;
+            color: white;
+            font-weight: bold;
+            border-radius: 10px;
+        }
+
+        #getInput-section>div:first-child {
+            background: coral;
+        }
+
+        #getInput-section>div:nth-child(2) {
+            background: green;
+        }
+
+        #getInput-section input {
+            font-size: 20px;
+            width: 100%;
+            margin: 5px 0;
+        }
+
+        #getInput-section input[type=number] {
+            border: 0;
+            outline: 0;
+            border-radius: 10px;
+            padding: 5px 10px;
+            margin-top: 25px;
+        }
+
+        #getInput-section input[type=button] {
+            font-weight: bold;
+            background: cornsilk;
+            border: 0;
+            border-radius: 5px;
+            padding: 10px 0;
+        }
+    </style>
 </head>
 
 <body>
     <main>
-        <section>
+        <section id="overview-section">
             <div id="deposite">
                 <h4>Deposite</h4>
                 <div>
@@ -30,15 +132,15 @@
                 </div>
             </div>
         </section>
-        <section>
+        <section id="getInput-section">
             <div>
-                <label for="depositeInput">Enter money to deposite</label>
-                <input type="number" id="depositeInput" placeholder="type here">
+                <label for="depositeInput">Enter money to deposite</label><br>
+                <input type="number" id="depositeInput" placeholder="type here"><br>
                 <input type="button" value="Deposite" id="depositeButton">
             </div>
             <div>
-                <label for="withdrawInput">Enter money to withdraw</label>
-                <input type="number" id="withdrawInput" placeholder="type here">
+                <label for="withdrawInput">Enter money to withdraw</label><br>
+                <input type="number" id="withdrawInput" placeholder="type here"><br>
                 <input type="button" value="Withdraw" id="withdrawButton">
             </div>
         </section>
