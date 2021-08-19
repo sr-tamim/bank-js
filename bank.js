@@ -18,4 +18,4 @@ function moneyOperation(getInput, throwOutput) {
 
 depositeBtn.addEventListener('click', function () { if (depositeInput.value > 0) { moneyOperation(depositeInput.value, depositeAmount) } })
 
-withdrawBtn.addEventListener('click', function () { if (withdrawInput.value > 0) { moneyOperation(-withdrawInput.value, withdrawAmount) } })
+withdrawBtn.addEventListener('click', function () { if (withdrawInput.value > 0 && withdrawInput < balanceAmount.innerText) { moneyOperation(-withdrawInput.value, withdrawAmount) } })
