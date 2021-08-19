@@ -12,10 +12,8 @@ function moneyOperation(getInput, throwOutput) {
 
     //update balance
     balanceAmount.innerText = parseFloat(balanceAmount.innerText) + parseFloat(getInput);
-
-    input = ''; // clear the input field
 }
 
-depositeBtn.addEventListener('click', function () { if (depositeInput.value > 0) { moneyOperation(depositeInput.value, depositeAmount) } })
+depositeBtn.addEventListener('click', function () { if (depositeInput.value > 0) { moneyOperation(depositeInput.value, depositeAmount); depositeInput.value = ''; } })
 
-withdrawBtn.addEventListener('click', function () { if (withdrawInput.value > 0 && withdrawInput < balanceAmount.innerText) { moneyOperation(-withdrawInput.value, withdrawAmount) } })
+withdrawBtn.addEventListener('click', function () { if (withdrawInput.value > 0 && withdrawInput.value <= parseFloat(balanceAmount.innerText)) { moneyOperation(-withdrawInput.value, withdrawAmount); withdrawInput.value = ''; } })
