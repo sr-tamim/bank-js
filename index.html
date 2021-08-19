@@ -81,6 +81,16 @@
         const inputPassword = document.getElementById('passwordField');
         const submitBtn = document.getElementById('submitButton');
 
+        document.querySelectorAll('input').forEach(element => {
+            element.addEventListener('keyup', function () {
+                if (inputMail.value == 'tamim@srt.com' && inputPassword.value == 'tamim') {
+                    submitBtn.removeAttribute('disabled');
+                } else {
+                    submitBtn.setAttribute('disabled', true);
+                }
+            })
+        })
+
         submitBtn.addEventListener('click', function () {
             if (inputMail.value == '' || inputPassword.value == '') {
                 console.log('Fill up both fields..');
